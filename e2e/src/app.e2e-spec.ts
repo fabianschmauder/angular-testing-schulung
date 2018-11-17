@@ -7,8 +7,16 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should filter', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to angular-testing!');
+
+    const all = page.findElementsByCss('.mannschaft');
+    expect(all.count()).toEqual(18);
+
+    page.getFilterInput().sendKeys('Schal');
+
+    const filtered = page.findElementsByCss('.mannschaft');
+    expect(filtered.count()).toEqual(1);
+
   });
 });

@@ -5,7 +5,15 @@ export class AppPage {
     return browser.get('/');
   }
 
-  getTitleText() {
-    return element(by.css('app-root h1')).getText();
+  getFilterInput() {
+    return element(by.id('filterInput'));
+  }
+
+  findElementsByCss(css: string){
+    return element.all(by.css(css));
+  }
+
+  wait(time:number){
+    browser.sleep(time);
   }
 }
