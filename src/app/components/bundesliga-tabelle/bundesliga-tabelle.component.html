@@ -1,0 +1,7 @@
+<table>
+  <tr  *ngFor="let mannschaft of mannschaften" class="mannschaft" >
+    <td><img width="20px" [src]="mannschaft.TeamIconUrl"/></td>
+    <td>{{mannschaft.TeamName}}</td>
+    <td>{{mannschaft.Points}}</td>
+  </tr>
+</table>
